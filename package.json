@@ -1,5 +1,5 @@
 {
-    "name": "root-repo",
+    "name": "repo-root",
     "version": "1.0.0-alpha.1",
     "description": "Finds the root directory of a repository",
     "main": "index.js",
