@@ -2,7 +2,7 @@ import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { cwd } from "node:process";
 import { getMonorepoPackages, isMonorepo } from "@yankeeinlondon/is-monorepo";
-import { isObject, isString } from "inferred-types";
+import { hasIndexOf, isDefined, isObject, isString } from "inferred-types";
 import { InvalidPath, NotFound } from "~/errors";
 
 export interface RepoRootOption {
@@ -86,9 +86,9 @@ export function repoRoot(pathOrOpt?: string | RepoRootOption) {
   const userPath: string | undefined = isString(pathOrOpt)
     ? pathOrOpt.startsWith(".")
       ? join(cwd(), pathOrOpt)
-      : pathOrOpt
-    : isObject(pathOrOpt)
-      ? pathOrOpt.path
+      : pathOrOpt as string
+    : isObject(pathOrOpt) && hasIndexOf(pathOrOpt, "path")
+      ? isString(pathOrOpt.path)
         ? pathOrOpt.path.startsWith(".")
           ? join(cwd(), pathOrOpt.path)
           : pathOrOpt.path
@@ -105,7 +105,7 @@ export function repoRoot(pathOrOpt?: string | RepoRootOption) {
 
   const dir = userPath || cwd();
 
-  const stopFile = isObject(pathOrOpt) && pathOrOpt.stopFile
+  const stopFile = isObject(pathOrOpt) && isString(pathOrOpt.stopFile)
     ? pathOrOpt.stopFile
     : ".git/HEAD";
 
