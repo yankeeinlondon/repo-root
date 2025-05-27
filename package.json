@@ -15,6 +15,9 @@
     ],
     "author": "Ken Snyder <ken@ken.net>",
     "license": "MIT",
+    "files": [
+        "dist"
+    ],
     "packageManager": "pnpm@10.10.0",
     "devDependencies": {
         "@antfu/eslint-config": "^4.13.2",
