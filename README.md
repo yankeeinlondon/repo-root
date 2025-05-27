@@ -5,7 +5,7 @@ Finds a repository's "root directory".
 ## Install
 
 ```sh
-pnpm install root-repo
+pnpm install repo-root
 ```
 
 ## Usage
