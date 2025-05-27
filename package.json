@@ -1,6 +1,6 @@
 {
     "name": "repo-root",
-    "version": "1.0.0-alpha.2",
+    "version": "1.0.0-alpha.3",
     "description": "Finds the root directory of a repository",
     "main": "index.js",
     "scripts": {
