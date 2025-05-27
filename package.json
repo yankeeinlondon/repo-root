@@ -2,7 +2,16 @@
     "name": "repo-root",
     "version": "1.0.0-alpha.3",
     "description": "Finds the root directory of a repository",
-    "main": "index.js",
+    "type": "module",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.js"
+        }
+    },
     "scripts": {
         "build": "tsdown src/index.ts --format=esm,cjs --dts",
         "test": "vitest",
