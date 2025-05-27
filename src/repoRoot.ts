@@ -2,7 +2,7 @@ import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { cwd } from "node:process";
 import { getMonorepoPackages, isMonorepo } from "@yankeeinlondon/is-monorepo";
-import { hasIndexOf, isDefined, isObject, isString } from "inferred-types";
+import { hasIndexOf, isObject, isString } from "inferred-types";
 import { InvalidPath, NotFound } from "~/errors";
 
 export interface RepoRootOption {
