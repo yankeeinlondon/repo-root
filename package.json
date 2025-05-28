@@ -1,6 +1,6 @@
 {
     "name": "repo-root",
-    "version": "1.0.0-beta.1",
+    "version": "1.0.0-beta.2",
     "description": "Finds the root directory of a repository",
     "type": "module",
     "main": "dist/index.cjs",
